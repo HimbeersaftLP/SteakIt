@@ -14,7 +14,7 @@ class Main extends PluginBase implements Listener{
           $this->getServer()->getPluginManager()->registerEvents($this,$this);
           $this->getLogger()->info("Steak aktiviert!");
      }
-     if($cmd->getName() == "test"){
+     if($cmd->getName() == "steak"){
           if(!$sender instanceof Player){
                $sender->sendMessage("Dieser Befehl geht nur INGAME!");
           }else{
