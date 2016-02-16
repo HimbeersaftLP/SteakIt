@@ -14,7 +14,12 @@ class Main extends PluginBase implements Listener{
           $this->getServer()->getPluginManager()->registerEvents($this,$this);
           $this->getLogger()->info("Steak aktiviert!");
      }
-     if($cmd->getName() == "steak"){
+     
+     public function onCommand(CommandSender $sender, Command $command, $label, array $args){
+		switch($command->getName()){
+		     
+          case "steak":
+               
           if(!$sender instanceof Player){
                $sender->sendMessage("Dieser Befehl geht nur INGAME!");
           }else{
@@ -22,5 +27,7 @@ class Main extends PluginBase implements Listener{
                $sender->sendMessage("Du hast 10 gratis Steak bekommen!");
           }
       }
-      return true;
+          return true;
+      default:
+		return false;
 }
