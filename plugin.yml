@@ -1,5 +1,5 @@
     name: steak
-    main: feed\main
+    main: steak\main
     version: 1.0.0
     api: 1.12.0
     
