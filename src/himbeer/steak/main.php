@@ -1,6 +1,6 @@
 <?php
 
-namespace steak\steak;
+namespace himbeer\steak;
 
 use pocketmine\plugin\PluginBase;
 use pocketmine\event\Listener;
