@@ -1,6 +1,6 @@
 <?php
 
-namespace himbeersaftlp\steak;
+namespace steak\steak;
 
 use pocketmine\plugin\PluginBase;
 use pocketmine\event\Listener;
@@ -26,8 +26,7 @@ class Main extends PluginBase implements Listener{
                $sender->getInventory()->addItem(Item::get(364,0,10));
                $sender->sendMessage("Du hast 10 gratis Steak bekommen!");
           }
-      }
+      		}
           return true;
-      default:
-		return false;
+     }
 }
