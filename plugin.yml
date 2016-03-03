@@ -5,5 +5,5 @@
     
     commands:
         steak:
-            description: Give Steak
+            description: Gibt dir ein Steak.
     
