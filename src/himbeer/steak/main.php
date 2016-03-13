@@ -12,7 +12,7 @@ use pocketmine\command\CommandSender;
 class Main extends PluginBase implements Listener{
      public function onEnable(){
      	$this->getServer()->getPluginManager()->registerEvents($this,$this);
-     	$this->getLogger()->info("Steak aktiviert!");
+     	$this->getLogger()->info("SteakIt aktiviert!");
      }
      
      public function onCommand(CommandSender $sender, Command $command, $label, array $args){
