@@ -10,6 +10,7 @@ use pocketmine\command\Command;
 use pocketmine\command\CommandSender;
 
 class Main extends PluginBase implements Listener{
+     
      public function onEnable(){
           $this->getServer()->getPluginManager()->registerEvents($this,$this);
           $this->getLogger()->info("SteakIt aktiviert!");
@@ -18,13 +19,13 @@ class Main extends PluginBase implements Listener{
      public function onCommand(CommandSender $sender, Command $command, $label, array $args){
           switch($command->getName()){
                case "steak":
-                    if(!$sender instanceof Player){
-                         $sender->sendMessage("Die Konsole ist leider nicht hungrig!");
-                    }else{
-                         $sender->getInventory()->addItem(Item::get(364,0,10));
-                         $sender->sendMessage("Du hast 10 gratis Steak bekommen!");
-                    }
-                    return true;
+               if(!$sender instanceof Player){
+                    $sender->sendMessage("Die Konsole ist leider nicht hungrig!");
+               }else{
+                    $sender->getInventory()->addItem(Item::get(364,0,10));
+                    $sender->sendMessage("Du hast 10 gratis Steak bekommen!");
+               }
           }
+          return true;
      }
 }
