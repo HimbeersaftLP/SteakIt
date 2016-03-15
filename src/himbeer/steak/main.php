@@ -18,7 +18,6 @@ class Main extends PluginBase implements Listener{
           @mkdir($this->getDataFolder());
           $this->config = new Config ($this->getDataFolder() . "config.yml" , Config::YAML, array());
           $this->config->set("steaks");
-          §steaks = $this->config->get("steaks");
      }
      
      public function onCommand(CommandSender $sender, Command $command, $label, array $args){
@@ -27,7 +26,8 @@ class Main extends PluginBase implements Listener{
                if(!$sender instanceof Player){
                     $sender->sendMessage("Die Konsole ist leider nicht hungrig!");
                }else{
-                    $sender->getInventory()->addItem(Item::get(364,0,§steaks);
+                    $steaks = $this->config->get("steaks");
+                    $sender->getInventory()->addItem(Item::get(364,0,$steaks);
                     $sender->sendMessage("Du hast 10 gratis Steak bekommen!");
                }
           }
