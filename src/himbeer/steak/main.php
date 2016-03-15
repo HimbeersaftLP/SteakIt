@@ -18,7 +18,7 @@ class Main extends PluginBase implements Listener{
           @mkdir($this->getDataFolder());
           $this->config = new Config ($this->getDataFolder() . "config.yml" , Config::YAML, array());
           $this->config->set("steaks");
-          §amount = $this->config->get("steaks");
+          §amount = $this->config->get("steaks");;
      }
      
      public function onCommand(CommandSender $sender, Command $command, $label, array $args){
