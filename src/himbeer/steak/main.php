@@ -27,7 +27,7 @@ class Main extends PluginBase implements Listener{
                     $sender->sendMessage("The console isn't hungry!");
                }else{
                     $steaks = $this->config->get("steaks");
-                    $sender->getInventory()->addItem(Item::get(364,0,$steaks);
+                    $sender->getInventory()->addItem(Item::get(364,0,$steaks));
                     $sender->sendMessage("You got some free steaks!");
                }
           }
