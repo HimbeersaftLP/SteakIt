@@ -14,7 +14,7 @@ class Main extends PluginBase implements Listener{
      
      public function onEnable(){
           $this->getServer()->getPluginManager()->registerEvents($this,$this);
-          $this->getLogger()->info("SteakIt aktiviert!");
+          $this->getLogger()->info("SteakIt enabled!");
           @mkdir($this->getDataFolder());
           $this->config = new Config ($this->getDataFolder() . "config.yml" , Config::YAML, array());
           $this->config->set("steaks");
@@ -24,11 +24,11 @@ class Main extends PluginBase implements Listener{
           switch($command->getName()){
                case "steak":
                if(!$sender instanceof Player){
-                    $sender->sendMessage("Die Konsole ist leider nicht hungrig!");
+                    $sender->sendMessage("The console isn't hungry!");
                }else{
                     $steaks = $this->config->get("steaks");
                     $sender->getInventory()->addItem(Item::get(364,0,$steaks);
-                    $sender->sendMessage("Du hast 10 gratis Steak bekommen!");
+                    $sender->sendMessage("You got some free steaks!");
                }
           }
           return true;
