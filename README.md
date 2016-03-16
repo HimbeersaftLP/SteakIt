@@ -1,4 +1,4 @@
 # MyFirstPlugIn
 
-Great thanks to *Taki21*
+Great thanks to *Taki21* and *TheDragonRing*
 With help from *RedstoneAlmeida*
