@@ -27,7 +27,7 @@ class Main extends PluginBase implements Listener{
                # SteakIt configuration file:
                # 
                # Number of steaks to give to a player:
-               steaks: 10
+               "steaks" => 10,
           ));
           $this->saveResource("config.yml");
      }
