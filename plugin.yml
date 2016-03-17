@@ -6,4 +6,5 @@
     commands:
         steak:
             description: Gives some Steak to you.
-    
+        teststeaks:
+            description: Tests how many steaks are set in config.
