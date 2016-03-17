@@ -42,8 +42,8 @@ class Main extends PluginBase implements Listener{
                          $sender->getInventory()->addItem(Item::get(364,0,$steaks));
                          $sender->sendMessage("You got ",§steaks," free steaks!");
                     }
-               case "teststeaks":
-                    §sender->sendMessage("Steaks are set to ",§steaks);
+#               case "teststeaks":
+#                    §sender->sendMessage("Steaks are set to ",§steaks);
           }
           return true;
      }
