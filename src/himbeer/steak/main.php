@@ -35,15 +35,15 @@ class Main extends PluginBase implements Listener{
      public function onCommand(CommandSender $sender, Command $command, $label, array $args){
           switch($command->getName()){
                case "steak":
-               if(!$sender instanceof Player){
-                    $sender->sendMessage("The console isn't hungry!");
-               }else{
-                    $steaks = $this->config->get("steaks");
-                    $sender->getInventory()->addItem(Item::get(364,0,$steaks));
-                    $sender->sendMessage("You got ",§steaks," free steaks!");
-               }
+                    if(!$sender instanceof Player){
+                         $sender->sendMessage("The console isn't hungry!");
+                    }else{
+                         $steaks = $this->config->get("steaks");
+                         $sender->getInventory()->addItem(Item::get(364,0,$steaks));
+                         $sender->sendMessage("You got ",§steaks," free steaks!");
+                    }
                case "teststeaks":
-               §sender->sendMessage("Steaks are set to ",§steaks);
+                    §sender->sendMessage("Steaks are set to ",§steaks);
           }
           return true;
      }
