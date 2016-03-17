@@ -39,7 +39,7 @@ class Main extends PluginBase implements Listener{
                     }else{
                          $steaks = $this->config->get("steaks");
                          $sender->getInventory()->addItem(Item::get(364,0,$steaks));
-                         $sender->sendMessage("You got "§steaks" free steaks!");
+                         $sender->sendMessage("You got ",§steaks," free steaks!");
                     }
 #               case "teststeaks":
 #                    §sender->sendMessage("Steaks are set to ",§steaks);
