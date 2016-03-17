@@ -17,7 +17,6 @@ class Main extends PluginBase implements Listener{
           $this->getLogger()->info("SteakIt enabled!");
           @mkdir($this->getDataFolder());
           $this->config = new Config ($this->getDataFolder() . "config.yml" , Config::YAML, array(
-
                #     _____ _             _    _____ _   
                #    / ____| |           | |  |_   _| |  
                #   | (___ | |_ ___  __ _| | __ | | | |_ 
@@ -40,7 +39,7 @@ class Main extends PluginBase implements Listener{
                     }else{
                          $steaks = $this->config->get("steaks");
                          $sender->getInventory()->addItem(Item::get(364,0,$steaks));
-                         $sender->sendMessage("You got ",§steaks," free steaks!");
+                         $sender->sendMessage("You got "§steaks" free steaks!");
                     }
 #               case "teststeaks":
 #                    §sender->sendMessage("Steaks are set to ",§steaks);
