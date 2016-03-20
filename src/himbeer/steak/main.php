@@ -28,8 +28,8 @@ class Main extends PluginBase implements Listener{
                 # 
                 # Number of steaks to give to a player:
                "steaks" => 10,
-               "steak_msg" => "You got 10 free steak!"
-               "console_msg" => "The console isn't hungry!"
+               "steak_msg" => "You got 10 free steak!",
+               "console_msg" => "The console isn't hungry!",
           ));
           $this->saveResource("config.yml");
      }
