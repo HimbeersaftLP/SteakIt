@@ -17,16 +17,19 @@ class Main extends PluginBase implements Listener{
           $this->getLogger()->info("SteakIt enabled!");
           @mkdir($this->getDataFolder());
           $this->config = new Config ($this->getDataFolder() . "config.yml" , Config::YAML, array(
-               #     _____ _             _    _____ _   
-               #    / ____| |           | |  |_   _| |  
-               #   | (___ | |_ ___  __ _| | __ | | | |_ 
-               #    \___ \| __/ _ \/ _` | |/ / | | | __|
-               #    ____) | ||  __/ (_| |   < _| |_| |_ 
-               #   |_____/ \__\___|\__,_|_|\_\_____|\__|
-               # SteakIt configuration file:
-               # 
-               # Number of steaks to give to a player:
+
+                #     _____ _             _    _____ _   
+                #    / ____| |           | |  |_   _| |  
+                #   | (___ | |_ ___  __ _| | __ | | | |_ 
+                #    \___ \| __/ _ \/ _` | |/ / | | | __|
+                #    ____) | ||  __/ (_| |   < _| |_| |_ 
+                #   |_____/ \__\___|\__,_|_|\_\_____|\__|
+                # SteakIt configuration file:
+                # 
+                # Number of steaks to give to a player:
                "steaks" => 10,
+               "steak_msg" => "You got 10 free steak!"
+               "console_msg" => "The console isn't hungry!"
           ));
           $this->saveResource("config.yml");
      }
@@ -35,14 +38,14 @@ class Main extends PluginBase implements Listener{
           switch($command->getName()){
                case "steak":
                     if(!$sender instanceof Player){
-                         $sender->sendMessage("The console isn't hungry!");
+                         §console_msg = §this->config->get("console_msg")
+                         $sender->sendMessage(§console_msg);
                     }else{
                          $steaks = $this->config->get("steaks");
                          $sender->getInventory()->addItem(Item::get(364,0,$steaks));
-                         $sender->sendMessage("You got ",§steaks," free steaks!");
+                         $steak_msg = $this->config->get("steak_msg")
+                         $sender->sendMessage(§steak_msg);
                     }
-#               case "teststeaks":
-#                    §sender->sendMessage("Steaks are set to ",§steaks);
           }
           return true;
      }
