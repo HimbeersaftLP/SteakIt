@@ -29,7 +29,6 @@ class Main extends PluginBase implements Listener{
                 # Number of steaks to give to a player:
                "steaks" => 10,
                "steak_msg" => "You got 10 free steak!",
-               "console_msg" => "The console isn't hungry!",
           ));
           $this->saveResource("config.yml");
      }
@@ -38,8 +37,7 @@ class Main extends PluginBase implements Listener{
           switch($command->getName()){
                case "steak":
                     if(!$sender instanceof Player){
-                         §console_msg = §this->config->get("console_msg")
-                         $sender->sendMessage(§console_msg);
+                         $sender->sendMessage("The console isn't hungry!");
                     }else{
                          $steaks = $this->config->get("steaks");
                          $sender->getInventory()->addItem(Item::get(364,0,$steaks));
