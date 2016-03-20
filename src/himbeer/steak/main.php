@@ -38,13 +38,13 @@ class Main extends PluginBase implements Listener{
           switch($command->getName()){
                case "steak":
                     if(!$sender instanceof Player){
-                         §nosteakmsg = §this->config->get("console_msg");
-                         $sender->sendMessage(§nosteakmsg);
+                         $console_msg = §this->config->get("console_msg");
+                         $sender->sendMessage($console_msg);
                     }else{
                          $steaks = $this->config->get("steaks");
                          $sender->getInventory()->addItem(Item::get(364,0,$steaks));
-                         $steakmsg = $this->config->get("steak_msg");
-                         $sender->sendMessage(§steakmsg);
+                         $steak_msg = $this->config->get("steak_msg");
+                         $sender->sendMessage($steak_msg);
                     }
           }
           return true;
