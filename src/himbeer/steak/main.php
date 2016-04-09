@@ -20,7 +20,7 @@ class Main extends PluginBase implements Listener{
                "steaks" => 10,
                "steak_msg" => "You got 10 free steak!",
                "hunger_fill_msg" => "Your hunger bar had been filled!",
-               "hunger_and_steak_msg" => "You got 10 free steaks and your hunger bar had been filled!"
+               "hunger_and_steak_msg" => "You got 10 free steaks and your hunger bar had been filled!",
                "console_msg" => "The console isn't hunry!",
                "give_steaks" => true,
                "fill_hunger" => true,
