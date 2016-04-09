@@ -17,19 +17,13 @@ class Main extends PluginBase implements Listener{
           $this->getLogger()->info("SteakIt enabled!");
           @mkdir($this->getDataFolder());
           $this->config = new Config ($this->getDataFolder() . "config.yml" , Config::YAML, array(
-
-                #     _____ _             _    _____ _   
-                #    / ____| |           | |  |_   _| |  
-                #   | (___ | |_ ___  __ _| | __ | | | |_ 
-                #    \___ \| __/ _ \/ _` | |/ / | | | __|
-                #    ____) | ||  __/ (_| |   < _| |_| |_ 
-                #   |_____/ \__\___|\__,_|_|\_\_____|\__|
-                # SteakIt configuration file:
-                # 
-                # Number of steaks to give to a player:
                "steaks" => 10,
                "steak_msg" => "You got 10 free steak!",
+               "hunger_fill_msg" => "Your hunger bar had been filled!",
+               "hunger_and_steak_msg" => "You got 10 free steaks and your hunger bar had been filled!"
                "console_msg" => "The console isn't hunry!",
+               "give_steaks" => true,
+               "fill_hunger" => true,
           ));
           $this->saveResource("config.yml");
      }
@@ -41,10 +35,24 @@ class Main extends PluginBase implements Listener{
                          $console_msg = $this->config->get("console_msg");
                          $sender->sendMessage($console_msg);
                     }else{
-                         $steaks = $this->config->get("steaks");
-                         $sender->getInventory()->addItem(Item::get(364,0,$steaks));
-                         $steak_msg = $this->config->get("steak_msg");
-                         $sender->sendMessage($steak_msg);
+                         if($this->config->get("give_steaks") == true && $this->config->get("fill_hunger") == false){
+                              $steaks = $this->config->get("steaks");
+                              $sender->getInventory()->addItem(Item::get(364,0,$steaks));
+                              $steak_msg = $this->config->get("steak_msg");
+                              $sender->sendMessage($steak_msg);
+                         }elseif($this->config->get("give_steaks") == false && $this->config->get("fill_hunger") == true){
+                              $hunger_fill_msg = $this->config->get("hunger_fill_msg");
+                              $sender->sendMessage($hunger_fill_msg);
+                              $sender->setFood(20);
+                         }elseif($this->config->get("give_steaks") == true && $this->config->get("fill_hunger") == true){
+                              $hunger_and_steak_msg = $this->config->get("hunger_and_steak_msg");
+                              $steaks = $this->config->get("steaks");
+                              $sender->getInventory()->addItem(Item::get(364,0,$steaks));
+                              $sender->setFood(20);
+                              $sender->sendMessage($hunger_and_steak_msg);
+                         }else{
+                              $sender->sendMessage("Please set fill_hunger or give_steaks in config to true!")
+                         }
                     }
           }
           return true;
