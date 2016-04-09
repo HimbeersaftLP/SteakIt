@@ -51,7 +51,7 @@ class Main extends PluginBase implements Listener{
                               $sender->setFood(20);
                               $sender->sendMessage($hunger_and_steak_msg);
                          }else{
-                              $sender->sendMessage("Please set fill_hunger or give_steaks in config to true!")
+                              $sender->sendMessage("Please set fill_hunger or give_steaks in config to true!");
                          }
                     }
           }
