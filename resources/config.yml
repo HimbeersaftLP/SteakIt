@@ -1,9 +1,39 @@
 ---
-steaks: 10
-steak_msg: You got 10 free steak!
-hunger_fill_msg: Your hunger bar had been filled!
-hunger_and_steak_msg: You got 10 free steaks and your hunger bar had been filled!
-console_msg: The console isn't hunry!
-give_steaks: true
+#  $$$$$$\    $$\                         $$\       $$$$$$\ $$\
+# $$  __$$\   $$ |                        $$ |      \_$$  _|$$ |
+# $$ /  \__|$$$$$$\    $$$$$$\   $$$$$$\  $$ |  $$\   $$ |$$$$$$\
+# \$$$$$$\  \_$$  _|  $$  __$$\  \____$$\ $$ | $$  |  $$ |\_$$  _|
+#  \____$$\   $$ |    $$$$$$$$ | $$$$$$$ |$$$$$$  /   $$ |  $$ |
+# $$\   $$ |  $$ |$$\ $$   ____|$$  __$$ |$$  _$$<    $$ |  $$ |$$\
+# \$$$$$$  |  \$$$$  |\$$$$$$$\ \$$$$$$$ |$$ | \$$\ $$$$$$\ \$$$$  |
+#  \______/    \____/  \_______| \_______|\__|  \__|\______| \____/
+# 
+# Main configuration file for SteakIt:
+# 
+# Count of steaks given to a player:
+steak_count: 10
+# 
+# The main command:
+# 
+# Message displayed when using /steak without subcommands:
+maincmd_msg: "You got 10 free steaks and your hunger bar was filled!"
+# Options for the main command:
+give_steak: true
 fill_hunger: true
+# 
+# Messages when using subcommands:
+# 
+# /steak steak:
+subcmd_steak: "You got 10 free steaks."
+# /steak hunger:
+subcmd_hunger: "Your hunger bar was filled!"
+# /steak both
+subcmd_both: "You got 10 free steaks and your hunger bar was filled!"
+# Subcommand not found:
+subcmd_not_found: "Unknown subcommand."
+# 
+# Other:
+# 
+# Message displayed when performing /steak from console:
+console_msg: "The console isn't hungry!"
 ...
