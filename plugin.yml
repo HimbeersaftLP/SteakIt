@@ -1,8 +1,15 @@
-    name: SteakIt
-    main: himbeer\steak\main
-    version: 3.0.0
-    api: [1.14.0, 2.0.0]
-    
-    commands:
-        steak:
-            description: Gives some Steak to you.
+name: SteakIt
+main: himbeer\steak\main
+version: 4.0.0
+api: [1.14.0, 2.0.0]
+
+commands:
+    steak:
+        description: "Gives some Steak to you."
+        usage: "/steak [steak|hunger|both]"
+        permission: steakit.steak
+
+permissions:
+    steakit.steak:
+        description: "Main permission for SteakIt"
+        default: true
