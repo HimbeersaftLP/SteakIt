@@ -48,7 +48,7 @@ class Main extends PluginBase implements Listener{
           switch($command->getName()){
                case "steak":
                     if(!$sender instanceof Player){
-                         $msg = $this->config->get("console_msg");
+                         $maincmdmsg = $this->config->get("console_msg");
                          $sender->sendMessage($msg);
                          break;
                     }else{
