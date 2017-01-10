@@ -30,7 +30,7 @@ class main extends PluginBase implements Listener{
           $this->getServer()->getPluginManager()->registerEvents($this,$this);
           $this->getLogger()->info("SteakIt by HimbeersaftLP enabled!");
           $this->saveResource("config.yml");
-          $this->config = new Config($this->getDataFolder(). "config.yml", Config::YAML);
+          $this->getConfig = new Config($this->getDataFolder(). "config.yml", Config::YAML);
      }
 
      public function giveSteak($player){
@@ -48,7 +48,7 @@ class main extends PluginBase implements Listener{
           switch($command->getName()){
                case "steak":
                     if(!$sender instanceof Player){
-                         $msg = $this->config->get("console_msg");
+                         $maincmdmsg = $this->config->get("console_msg");
                          $sender->sendMessage($msg);
                          break;
                     }else{
